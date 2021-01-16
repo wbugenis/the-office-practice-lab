@@ -19,18 +19,18 @@ _Keep in mind that in order to properly build out the relationships between the 
 ​
 ### **`Manager`**
   * Manager is initialized with a name, department and age. All of these attributes can change.
-  * `Manager#name`
-    * returns a `String` that is the manager's name
-  * `Manager#department`
-    * returns a `String` that is the department that the manager oversees
-  * `Manager#age`
-    * returns a `Fixnum` that is the age of the manager
+  <!-- * `Manager#name`
+    * returns a `String` that is the manager's name -->
+  <!-- * `Manager#department`
+    * returns a `String` that is the department that the manager oversees -->
+  <!-- * `Manager#age`
+    * returns a `Fixnum` that is the age of the manager -->
   * `Manager#employees`
     * returns an `Array` of all the employees that the manager oversees
   * `Manager#roles`
     * returns an `Array` of all the roles that the manager oversees
-  * `Manager.all`
-    * returns an `Array` of all the managers
+  <!-- * `Manager.all`
+    * returns an `Array` of all the managers -->
   * `Manager.all_departments`
     * returns an `Array` of all the department names that every manager oversees without repetitions
   * `Manager.average_age`
@@ -59,13 +59,13 @@ _Keep in mind that in order to properly build out the relationships between the 
 ​
 ### **`Role`**
   * Role is initialized with a name, which won't ever change.
-  * `Role#name`
-    * returns a `String` that is the role's name
+  <!-- * `Role#name`
+    * returns a `String` that is the role's name -->
   * `Role#employees`
     * returns an array of all the Employees who work at that role
   * `Role#managers`
     * returns a unique array of all the Manager instances who oversee Employees at that role 
-  * `Role.all`
-    * returns an `Array` of all the roles
+  <!-- * `Role.all`
+    * returns an `Array` of all the roles -->
   * `Role#add_employee`
     * takes a `String` argument of an employee's name, a `Fixnum` argument of the employee's salary and an instance of a Manager class and creates a new employee who work at this role

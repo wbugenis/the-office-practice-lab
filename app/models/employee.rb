@@ -32,9 +32,10 @@ class Employee
         Role.all.select {|role| role.name == search_role}.map {|role| role.employee}
     end
 
-    def get_promoted(role)
-        self.role.salary = role.employee.salary
-        self.role.name = role.name
+    def get_promoted(new_role)
+        Role.all.delete_if{|role| role.employee == self}
+        self.salary = new_role.employee.salary
+        Role.new(new_role.name, self, new_role.manager)
     end
 
 end

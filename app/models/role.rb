@@ -20,4 +20,10 @@ class Role
     def self.all
         @@all
     end
+
+    def add_employee(new_name, new_salary, manager)
+        new_employee = Employee.new(new_name, new_salary)
+        Role.new(self.name, manager, new_employee)
+    end
+    
 end

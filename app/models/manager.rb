@@ -6,7 +6,7 @@ class Manager
     def initialize(name, age, department)
         @name = name
         @age = age
-        @departmemt
+        @departmemt = department
         self.class.all << self
     end
 
@@ -15,17 +15,18 @@ class Manager
     end
 
     def employees
-        roles.map {|position| position.employee.uniq}
+        roles.map {|role| role.employee}.uniq
     end
 
     def self.all
-        self.class.all
+        @@all
     end
 
-    def average_age
-        @@all.select do |age|
-
+    def self.all_departments
+        Role.all.map {|role| role.department}.uniq
     end
 
-
+    def self.average_age
+        Manager.all.sum {|manager| manager.age}/Manager.all.count
+    end
 end

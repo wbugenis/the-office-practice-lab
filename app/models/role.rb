@@ -1,5 +1,5 @@
 class Role
-    attr_reader :name, :manager :employee
+    attr_reader :name, :manager, :employee
     @@all = []
     def initialize(name, manager, employee)
         @name = name
@@ -7,15 +7,14 @@ class Role
     end
 
     def employees
-
+        Role.all.map {|role| role.employee}
     end
 
     def managers
-
+        Role.all.map {|role| role.manager}.uniq
     end
 
     def self.all
-        self.class.all
+        @@all
     end
-
 end

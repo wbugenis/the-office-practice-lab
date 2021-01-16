@@ -1,7 +1,8 @@
 class Role
-    attr_reader :name, :manager, :employee
-    attr_accessor 
+
+    attr_reader :name, :manager, :employee 
     @@all = []
+
     def initialize(name, manager, employee)
         @name = name
         @manager = manager
@@ -25,5 +26,5 @@ class Role
         new_employee = Employee.new(new_name, new_salary)
         Role.new(self.name, manager, new_employee)
     end
-    
+
 end

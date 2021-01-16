@@ -11,7 +11,7 @@ class Manager
     end
 
     def roles
-        Role.all.select {|position| position.manager == self}
+        Role.all.select {|role| role.manager == self}
     end
 
     def employees

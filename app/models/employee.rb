@@ -24,8 +24,8 @@ class Employee
         self.all.select {|employee| employee.salary > pay}
     end
 
-    def self.find_by_department(department)
-        Role.all.find {|role| role.manager.department == department}.employee
+    def self.find_by_department(search_department)
+        Role.all.find {|role| role.manager.department == search_department}.employee
     end
 
     def self.search_by_role(search_role)
@@ -35,7 +35,7 @@ class Employee
     def get_promoted(new_role)
         Role.all.delete_if{|role| role.employee == self}
         self.salary = new_role.employee.salary
-        Role.new(new_role.name, self, new_role.manager)
+        Role.new(new_role.name, new_role.manager, self)
     end
 
 end

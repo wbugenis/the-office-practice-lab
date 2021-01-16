@@ -1,12 +1,12 @@
 class Manager
 
-    attr_accessor :name, :age, :departmemt
+    attr_accessor :name, :age, :department
     @@all = []
 
     def initialize(name, age, department)
         @name = name
         @age = age
-        @departmemt = department
+        @department = department
         self.class.all << self
     end
 
@@ -23,10 +23,10 @@ class Manager
     end
 
     def self.all_departments
-        Role.all.map {|role| role.department}.uniq
+        Role.all.map {|role| role.manager.department}.uniq
     end
 
     def self.average_age
-        Manager.all.sum {|manager| manager.age}/Manager.all.count
+        Manager.all.sum {|manager| manager.age}/Manager.all.count.to_f
     end
 end
